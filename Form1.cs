@@ -48,7 +48,7 @@ namespace chart1
                 int low = stkchart.GetDataValue(3, i);
                 int close = stkchart.GetDataValue(4, i);
 
-                chart1.Series[0].Points.AddXY(high,low,open,close);
+                chart1.Series[0].Points.AddY(high,low,open,close);
             }
         }
 
