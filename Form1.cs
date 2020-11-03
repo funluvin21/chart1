@@ -17,5 +17,10 @@ namespace chart1
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cpstkcode = new CPUTILLib.CpStockCode(); //인스턴스 생성
+        }
     }
 }
