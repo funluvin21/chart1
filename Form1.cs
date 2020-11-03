@@ -12,6 +12,7 @@ namespace chart1
 {
     public partial class Form1 : Form
     {
+        private CPUTILLib.CpCybos cpCybos;
         private CPUTILLib.CpStockCode cpstkcode; //멤버선언
         private CPSYSDIBLib.StockChart stkchart; //멤버선언
 
@@ -22,9 +23,16 @@ namespace chart1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cpCybos = null;
+            cpCybos = new CPUTILLib.CpCybos();
             cpstkcode = new CPUTILLib.CpStockCode(); //인스턴스 생성
             stkchart = new CPSYSDIBLib.StockChart(); //인스턴스 생성
-
+            
+            if (cpCybos.IsConnect == 0)
+            {
+                return;
+            }
+            
             stkchart.Received += Stkchart_Received;
         }
 
